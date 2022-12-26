@@ -1,0 +1,35 @@
+.table{
+    position: relative;
+    margin:20px;
+    width: fit-content;
+    height: fit-content;
+    border: solid 3px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing:border-box;
+    border-radius: 5px;  
+}
+.top-cont{
+    padding: 40px;
+}
+.number{
+    position: absolute;
+    left: 10px;
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+}
+.answers{
+    display: grid;
+    grid-template-columns: repeat(2,200px);
+    grid-template-rows: repeat(2,100px);
+}
+.answer{
+    border: solid 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin: 10px;
+}

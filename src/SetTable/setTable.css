@@ -1,0 +1,33 @@
+.setContainer{
+    border: 3px solid ;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    position:fixed;
+    margin: 20px;
+}
+input{
+    border-radius: 15px;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    margin: 10px;
+}
+.addSlide{
+    margin: 5px;
+    font-size: 25px;
+}
+.deleteSlide{
+    font-size: 25px;
+    margin: 5px;
+}
+.input-cont{
+    border-right: 1px solid;
+    display: flex;
+    flex-direction: column;
+}
+.add-del-cont{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
