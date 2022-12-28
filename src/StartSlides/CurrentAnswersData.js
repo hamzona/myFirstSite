@@ -22,9 +22,13 @@ function CurrentAnswersData({
   }
   return (
     <div
-      onClick={hendleAnswer}
-      style={clicked ? TrueFalseSyle : {}}
       className="pres-answer"
+      onClick={() => {
+        if (!clicked) {
+          hendleAnswer();
+        }
+      }}
+      style={clicked ? TrueFalseSyle : {}}
     >
       {answer.content}
     </div>

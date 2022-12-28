@@ -21,9 +21,9 @@ export default function SlidesContextProvider({ children }) {
       question: "question",
       answers: [
         { key: v4(), correct: true, content: "answer 1" },
-        { key: v4(), correct: true, content: "answer 2" },
-        { key: v4(), correct: true, content: "answer 3" },
-        { key: v4(), correct: true, content: "answer 4" },
+        { key: v4(), correct: false, content: "answer 2" },
+        { key: v4(), correct: false, content: "answer 3" },
+        { key: v4(), correct: false, content: "answer 4" },
       ],
     },
   ]);

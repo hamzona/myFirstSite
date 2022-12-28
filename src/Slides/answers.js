@@ -50,13 +50,13 @@ function Answers({
         setAnswerKey(answer.key);
       }}
     >
-      <div>
+      <div className="answer-input-cont">
         <input
+          className="inpAnswer"
           ref={ansRef}
           type="text"
           style={{ display: hideStyle ? "block" : "none" }}
           key={answer.key}
-          className="inpAnswer"
         />
 
         <div
@@ -74,22 +74,22 @@ function Answers({
               setSlides([...addAnswer()]);
             }
             hendlingElements();
-            setAnswerKey(answer.key);
+            //setAnswerKey(answer.key);
           }}
         >
-          {" "}
-          {hideStyle ? "submit" : "change text"}{" "}
+          {hideStyle ? "submit" : "change"}
         </button>
       </div>
-
-      <div
-        className="CorrectIncorrect"
-        onClick={() => {
-          setIsChange((prev) => !prev);
-        }}
-        style={TrueFalseSyle}
-      >
-        {answer.correct ? "✓" : "x"}
+      <div className="answer-footer">
+        <div
+          className="CorrectIncorrect"
+          onClick={() => {
+            setIsChange((prev) => !prev);
+          }}
+          style={TrueFalseSyle}
+        >
+          {answer.correct ? "✓" : "x"}
+        </div>
       </div>
     </div>
   );

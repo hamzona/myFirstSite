@@ -51,9 +51,9 @@ function App() {
         question: "question",
         answers: [
           { key: v4(), correct: true, content: "answer 1" },
-          { key: v4(), correct: true, content: "answer 2" },
-          { key: v4(), correct: true, content: "answer 3" },
-          { key: v4(), correct: true, content: "answer 4" },
+          { key: v4(), correct: false, content: "answer 2" },
+          { key: v4(), correct: false, content: "answer 3" },
+          { key: v4(), correct: false, content: "answer 4" },
         ],
       },
     ]);
@@ -77,7 +77,7 @@ function App() {
   return (
     <div className="container">
       {/* <SetQuestionAnswers className="set-cont" addSlide={addSlide} answerKey={answerKey} setSlides={setSlides} slideKey={slideKey} setSlideKey={setSlideKey} slides={slides}/>*/}
-
+      <div className="Settings"></div>
       <div className="slide-cont">
         {slides.map((slide, i) => {
           return (

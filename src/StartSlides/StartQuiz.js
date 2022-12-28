@@ -17,9 +17,6 @@ function StartQuiz() {
     return (
       <>
         <div className="quiz-run-cont">
-          <Link className="link" to="/">
-            Make quiz
-          </Link>
           <CurrentSlide
             setCorrect={setCorrect}
             className="slide-cont"
@@ -45,15 +42,15 @@ function StartQuiz() {
             {((correct / slides.length) * 100).toFixed(2)}%
           </p>
           <button
+            className="restart"
             onClick={() => {
               setI(0);
               setCurrentSlideData(slides[0]);
+              setCorrect(0);
             }}
           >
             Restart
           </button>
-          <br></br>
-          <Link to="/">Make quiz</Link>
         </div>
       </div>
     );
