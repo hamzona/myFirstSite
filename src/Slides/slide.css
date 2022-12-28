@@ -1,35 +1,85 @@
-.table{
-    position: relative;
-    margin:20px;
-    width: fit-content;
-    height: fit-content;
-    border: solid 3px black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing:border-box;
-    border-radius: 5px;  
+.delete {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 20px;
+  color: red;
+  border-radius: 5px;
 }
-.top-cont{
-    padding: 40px;
+.delete:active {
+  background-color: red;
 }
-.number{
-    position: absolute;
-    left: 10px;
-    padding: 0;
-    margin: 0;
-    font-size: 40px;
+.delete:hover {
+  background-color: rgb(182, 134, 134);
 }
-.answers{
-    display: grid;
-    grid-template-columns: repeat(2,200px);
-    grid-template-rows: repeat(2,100px);
+
+.CorrectIncorrect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  border-radius: 10px;
 }
-.answer{
-    border: solid 1px black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    margin: 10px;
+
+.hide {
+  display: none;
+}
+
+.table {
+  position: relative;
+  margin: 20px;
+  width: 450px;
+  height: 380px;
+  border: solid 3px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.top-cont {
+  padding: 40px;
+}
+.number {
+  position: absolute;
+  left: 10px;
+  padding: 0;
+  margin: 0;
+  font-size: 40px;
+}
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: repeat(2, 100px);
+}
+.answer {
+  /*border: solid 1px black;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.answerBtn {
+  height: 20px;
+  width: 50px;
+}
+.answer-cont {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+.inpAnswer {
+  width: 150px;
 }
