@@ -13,6 +13,7 @@ function StartQuiz() {
   useEffect(() => {
     setCurrentSlideData(slides[i]);
   }, [i]);
+
   if (currentSlideData !== undefined) {
     return (
       <>

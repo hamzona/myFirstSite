@@ -9,9 +9,17 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  border: 2px solid;
 }
-
+.colors {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(189, 189, 189);
+  border-radius: 20px;
+}
 .colorBtn {
+  margin-top: 30px;
   border: 2px solid;
   width: fit-content;
   font-size: 30px;
@@ -19,4 +27,20 @@
 }
 .colorBtn:hover {
   background-color: aliceblue;
+}
+.timer-cont {
+  margin: 20px;
+}
+.timer {
+  font-size: 20px;
+}
+.inpTimer {
+  border-radius: 15px;
+  text-align: center;
+}
+.title {
+  margin: 30px;
+}
+.colors-cont {
+  margin: 20px;
 }

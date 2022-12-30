@@ -20,6 +20,7 @@ export default function SlidesContextProvider({ children }) {
       key: v4(),
       question: "question",
       color: "white",
+      time: "unlimited",
       answers: [
         { key: v4(), correct: true, content: "answer 1" },
         { key: v4(), correct: false, content: "answer 2" },

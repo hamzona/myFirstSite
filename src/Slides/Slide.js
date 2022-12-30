@@ -30,6 +30,7 @@ function Slide({
       onClick={() => /*selektujem slide*/ setSlideKey(slide.key)}
     >
       <button
+        style={{ display: slides.length === 1 ? "none" : "flex" }}
         className="delete"
         onClick={() => setIsChangeDel((prev) => !prev)}
       >
