@@ -6,6 +6,7 @@ function CurrentSlide({
   currentSlideData,
   setI,
   i,
+  color,
   setCurrentSlideData,
   slides,
 }) {
@@ -27,7 +28,11 @@ function CurrentSlide({
     <div
       className="pres-table"
       style={{
-        backgroundColor: clicked ? (correctCheck ? "#00910e" : "#ce0000") : "",
+        backgroundColor: clicked
+          ? correctCheck
+            ? "#00910e"
+            : "#ce0000"
+          : color,
       }}
     >
       <div className="top-cont">

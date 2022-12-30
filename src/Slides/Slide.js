@@ -18,10 +18,15 @@ function Slide({
   selectedQues,
   setSelectedAnsw,
   setSelectedQuset,
+  color,
+  setColor,
 }) {
   return (
     <div
       className="table"
+      style={{
+        backgroundColor: color,
+      }}
       onClick={() => /*selektujem slide*/ setSlideKey(slide.key)}
     >
       <button

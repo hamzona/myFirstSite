@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./slide.css";
 function Answers({
   setSlideKey,
@@ -21,8 +21,24 @@ function Answers({
     backgroundColor: answer.correct ? "rgb(20, 148, 20)" : "rgb(187, 20, 20)",
   };
   const [hideStyle, setHideStyle] = useState(false);
-
+  // const [answerKeyPrev, setAnswerKeyPrev] = useState(answerKey);
   const ansRef = useRef("");
+  //let inputs = document.querySelectorAll(".inpAnswer");
+
+  useEffect(() => {
+    if (answerKey !== answer.key) {
+      setHideStyle(false);
+    }
+  }, [answerKey, slideKey]);
+
+  useEffect(() => {
+    ansRef.current.focus();
+  }, [hideStyle]);
+
+  /*function addAnswerReset() {
+    inputs.forEach(input=>)
+    return copySlides;
+  }*/
 
   let copySlides = slides;
   function addAnswer() {
@@ -38,10 +54,6 @@ function Answers({
     return copySlides;
   }
 
-  function hendlingElements() {
-    setHideStyle((prev) => !prev);
-  }
-
   /****************************************/
   return (
     <div
@@ -53,6 +65,7 @@ function Answers({
       <div className="answer-input-cont">
         <input
           className="inpAnswer"
+          // id={answer.key}
           ref={ansRef}
           type="text"
           style={{ display: hideStyle ? "block" : "none" }}
@@ -69,12 +82,13 @@ function Answers({
         <button
           className="answerBtn"
           onClick={() => {
+            //setSlides([...addAnswer()]);
+            //setAnswerKey(answer.key);
             setSlideKey(slide.key);
             if (hideStyle) {
               setSlides([...addAnswer()]);
             }
-            hendlingElements();
-            //setAnswerKey(answer.key);
+            setHideStyle((prev) => !prev);
           }}
         >
           {hideStyle ? "submit" : "change"}

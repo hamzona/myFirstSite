@@ -1,5 +1,5 @@
 import "./slide.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Question({
   slides,
@@ -17,6 +17,16 @@ export default function Question({
   const copySlides = slides;
 
   const questRef = useRef("");
+  useEffect(() => {
+    // setSlides([...addQuestion()]);
+    if (slide.key !== slideKey) {
+      setHideStyle(true);
+    }
+  }, [slideKey]);
+
+  useEffect(() => {
+    questRef.current.focus();
+  }, [hideStyle]);
 
   function addQuestion() {
     copySlides.forEach((slide) => {
@@ -26,15 +36,15 @@ export default function Question({
     });
     return copySlides;
   }
-
+  /*
   function resetOpenInputs() {
     if (slide.key !== slideKey) {
       setHideStyle(true);
     }
-  }
+  }*/
   /*Promjena iz question u input i obratno */
   function hidingElements() {
-    setSlideKey([slide.key]);
+    // setSlideKey([slide.key]);
     setHideStyle((prev) => !prev);
   }
   return (

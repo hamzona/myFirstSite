@@ -1,0 +1,12 @@
+.Settings {
+  position: fixed;
+  height: 100vh;
+  width: 300px;
+  border: 2px solid;
+  background-color: rgb(165, 165, 165);
+}
+.color-round {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}

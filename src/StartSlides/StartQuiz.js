@@ -18,6 +18,7 @@ function StartQuiz() {
       <>
         <div className="quiz-run-cont">
           <CurrentSlide
+            color={slides[0].color}
             setCorrect={setCorrect}
             className="slide-cont"
             slides={slides}

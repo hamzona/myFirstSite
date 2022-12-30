@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { v4 } from "uuid";
 //import SetQuestionAnswers from '../SetTable/SetQuestionAnswers'
 import "../app.css";
+import Settings from "./settings";
 import {
   useDataSlides,
   useUpdateDataSlides,
@@ -12,7 +13,8 @@ function App() {
   /*uzimam slide i setSlide iz Contexta */
   const slides = useDataSlides();
   const setSlides = useUpdateDataSlides();
-
+  /* */
+  const [color, setColor] = useState("white");
   /*Sluzi za selektovanje Slida i answera*/
   const [slideKey, setSlideKey] = useState("");
   const [answerKey, setAnswerKey] = useState("");
@@ -24,6 +26,15 @@ function App() {
 
   /*Funkcija koja mjenja tacnost odgovora u njegovu suprotnu vrijednost i vraca taj obj*/
 
+  function settingColor() {
+    copySlides.forEach((slide) => {
+      slide.color = color;
+    });
+    return copySlides;
+  }
+  useEffect(() => {
+    setSlides([...settingColor()]);
+  }, [color]);
   function hendleAnswer() {
     //answerDiv.target.classList.add('selected');
     copySlides.forEach((slide) => {
@@ -49,6 +60,7 @@ function App() {
       {
         key: v4(),
         question: "question",
+        color: color,
         answers: [
           { key: v4(), correct: true, content: "answer 1" },
           { key: v4(), correct: false, content: "answer 2" },
@@ -77,12 +89,13 @@ function App() {
   return (
     <div className="container">
       {/* <SetQuestionAnswers className="set-cont" addSlide={addSlide} answerKey={answerKey} setSlides={setSlides} slideKey={slideKey} setSlideKey={setSlideKey} slides={slides}/>*/}
-      <div className="Settings"></div>
+      <Settings setSlides={setSlides} slides={slides} setColor={setColor} />
       <div className="slide-cont">
         {slides.map((slide, i) => {
           return (
             <Slide /*selectedAnsw={selectedAnsw} setSelectedAnsw={setSelectedAnsw} selectedQues={selectedQues} setSelectedQuset={setSelectedQuset}*/
               setIsChangeDel={setIsChangeDel}
+              color={color}
               setIsChange={setIsChange}
               slides={slides}
               answerKey={answerKey}
