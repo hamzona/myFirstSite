@@ -10,3 +10,13 @@
   width: 50px;
   border-radius: 50%;
 }
+
+.colorBtn {
+  border: 2px solid;
+  width: fit-content;
+  font-size: 30px;
+  border-radius: 10px;
+}
+.colorBtn:hover {
+  background-color: aliceblue;
+}

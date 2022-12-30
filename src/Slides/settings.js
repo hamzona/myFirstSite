@@ -6,7 +6,12 @@ function Settings({ setColor }) {
   const [hideSettings, setHideSettings] = useState(false);
   return (
     <div className="Settings">
-      <div onClick={() => setHideSettings((prev) => !prev)}>change color</div>
+      <div
+        className="colorBtn"
+        onClick={() => setHideSettings((prev) => !prev)}
+      >
+        change color
+      </div>
       <div
         style={{ display: hideSettings ? "block" : "none" }}
         className="color-container"
