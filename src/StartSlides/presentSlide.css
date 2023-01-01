@@ -109,3 +109,14 @@
   color: white;
   font-size: 30px;
 }
+/*
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.time {
+  font-size: 40px;
+  margin: 20px;
+}*/

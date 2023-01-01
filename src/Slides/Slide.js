@@ -52,6 +52,7 @@ function Slide({
         {slide.answers.map((answer, i) => {
           return (
             <Answers
+              color={color}
               index={i}
               setSlides={setSlides}
               setSlideKey={setSlideKey}

@@ -19,8 +19,8 @@ export default function SlidesContextProvider({ children }) {
     {
       key: v4(),
       question: "question",
-      color: "white",
-      time: "unlimited",
+      color: ["rgb(155, 33, 33)", "rgb(221, 90, 90)"],
+      time: 5,
       answers: [
         { key: v4(), correct: true, content: "answer 1" },
         { key: v4(), correct: false, content: "answer 2" },

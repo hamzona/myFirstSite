@@ -5,6 +5,9 @@
   border: 2px solid;
   background-color: rgb(165, 165, 165);
 }
+* {
+  color: rgb(221, 90, 90);
+}
 .color-round {
   height: 50px;
   width: 50px;

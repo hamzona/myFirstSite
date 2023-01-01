@@ -61,6 +61,7 @@ function App() {
         key: v4(),
         question: "question",
         color: color,
+        time: slides[0].time,
         answers: [
           { key: v4(), correct: true, content: "answer 1" },
           { key: v4(), correct: false, content: "answer 2" },

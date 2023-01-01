@@ -3,6 +3,7 @@ function CurrentAnswersData({
   setCorrectChek,
   setCorrect,
   answer,
+  color,
   clicked,
   setClicked,
 }) {
