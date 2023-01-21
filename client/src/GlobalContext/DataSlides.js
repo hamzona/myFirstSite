@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { v4 } from "uuid";
-
+import Axios from "axios";
 const DataSlides = createContext();
 const UpdateDataSlides = createContext();
 
@@ -12,7 +12,18 @@ export function useDataSlides() {
 export function useUpdateDataSlides() {
   return useContext(UpdateDataSlides);
 }
-
+export function sentData(slides, name) {
+  Axios.post("http://localhost:5000/routes/slides", {
+    slides: slides,
+    name: name,
+  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
 export default function SlidesContextProvider({ children }) {
   /*glavni state koji cu mjenjati u Slides folderu i printat u StartSlides folderu */
   const [slides, setSlides] = useState([

@@ -1,9 +1,11 @@
 import { useState, useRef } from "react";
 import { v4 } from "uuid";
 import "./settings.css";
+import { sentData } from "../GlobalContext/DataSlides";
 function Settings({ setColor, setSlides, slides }) {
   const colors = ["red", "blue", "yellow", "white", "purple", "green", "pink"];
   const [hideSettings, setHideSettings] = useState(false);
+  const [name, setName] = useState("");
   const timeInput = useRef(15);
   let copySlides = slides;
   function AddTime() {
@@ -13,9 +15,22 @@ function Settings({ setColor, setSlides, slides }) {
     console.log(copySlides);
     return copySlides;
   }
+  function hendleName(e) {
+    setName(e.target.value);
+  }
   return (
     <div className="Settings">
-      <h1 className="title">Settings</h1>
+      <div>
+        <input
+          value={name}
+          onChange={(e) => {
+            hendleName(e);
+          }}
+          type="text"
+          placeholder="name"
+        />
+      </div>
+      <button onClick={() => sentData(slides, name)}>SAVE</button>
       <div className="colors-cont">
         <div
           className="colorBtn"
