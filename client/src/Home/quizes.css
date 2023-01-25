@@ -1,0 +1,15 @@
+.quizes {
+  margin-left: 50px;
+  padding: 30px;
+  border: solid black;
+  min-width: 400px;
+  width: fit-content;
+  display: flex;
+  justify-content: space-around;
+}
+.button {
+  padding: 0 10px;
+}
+.quizes:hover {
+  background-color: rgb(190, 190, 190);
+}

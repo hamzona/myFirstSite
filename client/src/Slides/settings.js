@@ -3,7 +3,16 @@ import { v4 } from "uuid";
 import "./settings.css";
 import { sentData } from "../GlobalContext/DataSlides";
 function Settings({ setColor, setSlides, slides }) {
-  const colors = ["red", "blue", "yellow", "white", "purple", "green", "pink"];
+  const colors = [
+    "red",
+    "blue",
+    "yellow",
+    "white",
+    "purple",
+    "green",
+    "pink",
+    "gray",
+  ];
   const [hideSettings, setHideSettings] = useState(false);
   const [name, setName] = useState("");
   const timeInput = useRef(15);

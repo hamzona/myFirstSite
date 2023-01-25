@@ -14,7 +14,7 @@ function App() {
   const slides = useDataSlides();
   const setSlides = useUpdateDataSlides();
   /* */
-  const [color, setColor] = useState("white");
+  const [color, setColor] = useState(slides[0].color);
   /*Sluzi za selektovanje Slida i answera*/
   const [slideKey, setSlideKey] = useState("");
   const [answerKey, setAnswerKey] = useState("");

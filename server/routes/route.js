@@ -21,6 +21,9 @@ route.get("/slides", async (req, res) => {
     console.log(err);
   }
 });
+route.patch("/slides", async (req, res) => {
+  res.send("Radi");
+});
 route.post("/slides", async (req, res) => {
   try {
     const newQuiz = await new slidesSCH({

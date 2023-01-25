@@ -21,11 +21,12 @@ function Slide({
   color,
   setColor,
 }) {
+  console.log(slide.color);
   return (
     <div
       className="table"
       style={{
-        backgroundColor: color,
+        backgroundColor: slide.color,
       }}
       onClick={() => /*selektujem slide*/ setSlideKey(slide.key)}
     >
