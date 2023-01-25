@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const slidesSCH = new mongoose.Schema({
-  quizName: String,
+  quizName: { type: String, required: true },
   slides: Array,
 });
 module.exports = mongoose.model("slidesSCH", slidesSCH);

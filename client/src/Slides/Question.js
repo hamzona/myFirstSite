@@ -51,31 +51,34 @@ export default function Question({
     <div className="top-cont">
       <p className="number">{number}</p>
       <div className="question-input-cont">
-        <input
-          ref={questRef}
-          className="inpQuest"
-          style={{ display: hideStyle ? "none" : "block" }}
-          type="text"
-        />
-        <h2
-          className="question"
-          style={{ display: hideStyle ? "block" : "none" }}
-        >
-          {slide.question}
-        </h2>
-        <button
-          className="textBtn"
-          onClick={() => {
-            //resetOpenInputs();
-            setSlideKey(slide.key);
-            if (!hideStyle) {
-              setSlides([...addQuestion()]);
-            }
-            hidingElements();
-          }}
-        >
-          {hideStyle ? "change" : "submit"}
-        </button>
+        <form>
+          <input
+            ref={questRef}
+            className="inpQuest"
+            style={{ display: hideStyle ? "none" : "block" }}
+            type="text"
+          />
+          <h2
+            className="question"
+            style={{ display: hideStyle ? "block" : "none" }}
+          >
+            {slide.question}
+          </h2>
+          <button
+            className="textBtn"
+            onClick={(e) => {
+              e.preventDefault();
+              //resetOpenInputs();
+              setSlideKey(slide.key);
+              if (!hideStyle) {
+                setSlides([...addQuestion()]);
+              }
+              hidingElements();
+            }}
+          >
+            {hideStyle ? "change" : "submit"}
+          </button>{" "}
+        </form>
       </div>
     </div>
   );

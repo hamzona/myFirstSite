@@ -13,6 +13,9 @@ export function useUpdateDataSlides() {
   return useContext(UpdateDataSlides);
 }
 export function sentData(slides, name) {
+  if (name === null) {
+    console.log("ne radi");
+  }
   Axios.post("http://localhost:5000/routes/slides", {
     slides: slides,
     name: name,
@@ -30,7 +33,7 @@ export default function SlidesContextProvider({ children }) {
     {
       key: v4(),
       question: "question",
-      color: ["rgb(155, 33, 33)", "rgb(221, 90, 90)"],
+      color: "white",
       time: 5,
       answers: [
         { key: v4(), correct: true, content: "answer 1" },

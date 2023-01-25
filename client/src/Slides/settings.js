@@ -18,6 +18,12 @@ function Settings({ setColor, setSlides, slides }) {
   function hendleName(e) {
     setName(e.target.value);
   }
+  function sendingData() {
+    if (name === "") {
+      console.log("Name is required");
+    }
+    sentData(slides, name);
+  }
   return (
     <div className="Settings">
       <div>
@@ -30,7 +36,7 @@ function Settings({ setColor, setSlides, slides }) {
           placeholder="name"
         />
       </div>
-      <button onClick={() => sentData(slides, name)}>SAVE</button>
+      <button onClick={() => sendingData()}>SAVE</button>
       <div className="colors-cont">
         <div
           className="colorBtn"

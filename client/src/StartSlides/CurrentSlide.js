@@ -23,12 +23,12 @@ function CurrentSlide({
 
   return (
     <div className="container">
-      <Timer
+      {/* <Timer
         setCorrectChek={setCorrectChek}
         correctCheck={correctCheck}
         clicked={clicked}
         time={currentSlideData.time}
-      />
+      /> */}
       <div
         className="pres-table"
         style={{

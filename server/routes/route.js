@@ -22,12 +22,12 @@ route.get("/slides", async (req, res) => {
   }
 });
 route.post("/slides", async (req, res) => {
-  console.log(req.body);
   try {
     const newQuiz = await new slidesSCH({
       quizName: req.body.name,
       slides: req.body.slides,
     });
+    console.log(newQuiz);
     await newQuiz.save();
     res.send(newQuiz);
   } catch (err) {

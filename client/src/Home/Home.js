@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import Quizes from "./Quizes";
 function Home() {
   const [data, setData] = useState(undefined);
   useEffect(() => {
@@ -14,11 +14,7 @@ function Home() {
   }, []);
   return (
     <div>
-      {data === undefined
-        ? "Loading..."
-        : data.map((item, index) => {
-            return <div key={index}> {item.quizName}</div>;
-          })}
+      <Quizes data={data} />
     </div>
   );
 }

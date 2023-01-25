@@ -6,10 +6,12 @@ import "./presentSlide.css";
 
 function StartQuiz() {
   const [i, setI] = useState(0);
-  const slides = useDataSlides();
+  const [slides, setSlides] = useState(useDataSlides());
+  console.log(slides);
   const [currentSlideData, setCurrentSlideData] = useState(slides[i]);
 
   const [correct, setCorrect] = useState(0);
+
   useEffect(() => {
     setCurrentSlideData(slides[i]);
   }, [i]);

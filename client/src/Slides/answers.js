@@ -63,36 +63,39 @@ function Answers({
       }}
     >
       <div className="answer-input-cont">
-        <input
-          className="inpAnswer"
-          // id={answer.key}
-          ref={ansRef}
-          type="text"
-          style={{ display: hideStyle ? "block" : "none" }}
-          key={answer.key}
-        />
+        <form>
+          <input
+            className="inpAnswer"
+            // id={answer.key}
+            ref={ansRef}
+            type="text"
+            style={{ display: hideStyle ? "block" : "none" }}
+            key={answer.key}
+          />
 
-        <div
-          className="answer"
-          style={{ display: hideStyle ? "none" : "block" }}
-        >
-          {answer.content}
-        </div>
+          <div
+            className="answer"
+            style={{ display: hideStyle ? "none" : "block" }}
+          >
+            {answer.content}
+          </div>
 
-        <button
-          className="answerBtn"
-          onClick={() => {
-            //setSlides([...addAnswer()]);
-            //setAnswerKey(answer.key);
-            setSlideKey(slide.key);
-            if (hideStyle) {
-              setSlides([...addAnswer()]);
-            }
-            setHideStyle((prev) => !prev);
-          }}
-        >
-          {hideStyle ? "submit" : "change"}
-        </button>
+          <button
+            className="answerBtn"
+            onClick={(e) => {
+              e.preventDefault();
+              //setSlides([...addAnswer()]);
+              //setAnswerKey(answer.key);
+              setSlideKey(slide.key);
+              if (hideStyle) {
+                setSlides([...addAnswer()]);
+              }
+              setHideStyle((prev) => !prev);
+            }}
+          >
+            {hideStyle ? "submit" : "change"}
+          </button>
+        </form>
       </div>
       <div className="answer-footer">
         <div
